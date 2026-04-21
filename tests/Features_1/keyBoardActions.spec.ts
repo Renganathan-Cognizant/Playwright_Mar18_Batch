@@ -1,6 +1,6 @@
 import{test} from '@playwright/test'
 
-test.only('keyboardactions', async({page})=>{
+test('keyboardactions', async({page})=>{
     await page.goto('https://gotranscript.com/text-compare')
     await page.fill("[name='text1']",'welcome to automation')
 

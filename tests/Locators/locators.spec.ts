@@ -1,6 +1,6 @@
 import {chromium, test} from '@playwright/test';
 
-test.only('Built-in locators', async()=>{
+test('Built-in locators', async()=>{
     //Launches a new chromium browser instance
     const browser = await chromium.launch();
 

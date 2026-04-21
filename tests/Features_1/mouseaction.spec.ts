@@ -1,6 +1,6 @@
 import {test} from '@playwright/test';
 
-test.only('Mouse hover', async({page})=>{
+test('Mouse hover', async({page})=>{
     await page.goto('https://www.snapdeal.com')
     const fashion = page.getByAltText('imgs/l/c/1/homesiteiconne-d6c37.jpeg')
     //await page.locator('//span[text()="Home & Kitchen"]')
