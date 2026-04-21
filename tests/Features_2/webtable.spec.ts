@@ -55,7 +55,37 @@ test("simple web table handling Approach2", async({page})=>{
     
 })
 
-test.only("web table - calculation", async({page})=>{
+test("web table - calculation", async({page})=>{
+    await page.goto("https://letcode.in/table")
+
+    const table = page.locator("#shopping")
+    const tbody = table.locator("tbody")
+    const tfoot = table.locator("tfoot")
+
+    const rowsCount = await tbody.locator("tr").count(); //4 #Shopping tbody tr
+    expect (rowsCount).toBe(4);
+
+    let total = 0;
+    //start --> 0
+    //1st iteration -> total = 0 + 150 = 150
+    //2nd iteration -> total = 150 + 180 = 330 //Number("150") + Number ("180") = 330
+    //3rd iteration -> total = 330 + 48 = 378
+    //4th iteration -> total = 378 + 480 = 858
+
+
+    for (let i=0; i<rowsCount; i++) {  //loops to get last col val
+        const row = tbody.locator("tr").nth(i); //selects the current row
+        const price = await row.locator("td").last().textContent(); //etract price from last col
+        total = total+ Number(price);
+    }
+
+    const actualValue = await tfoot.locator("td").last().textContent(); //"858"
+    expect (Number(actualValue)).toBe(total); //858 858
+
+    console.log(actualValue, total)
+})
+
+test("web tablee - calculation", async({page})=>{
     await page.goto("https://letcode.in/table")
 
     const table = page.locator("#shopping")
