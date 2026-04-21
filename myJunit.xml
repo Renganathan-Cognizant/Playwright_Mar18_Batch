@@ -1,0 +1,54 @@
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="35.483650000000004">
+<testsuite name="Report\report_demo.spec.ts" timestamp="2026-04-20T10:01:43.059Z" hostname="chromium" tests="2" failures="1" skipped="0" time="24.871" errors="0">
+<testcase name="radiobutton" classname="Report\report_demo.spec.ts" time="12.893">
+<failure message="report_demo.spec.ts:3:5 radiobutton" type="FAILURE">
+<![CDATA[  [chromium] › Report\report_demo.spec.ts:3:5 › radiobutton ────────────────────────────────────────
+
+    Error: expect(locator).not.toBeChecked() failed
+
+    Locator:  locator('#male')
+    Expected: not checked
+    Received: checked
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeChecked" with timeout 5000ms
+      - waiting for locator('#male')
+        9 × locator resolved to <input id="male" type="radio" value="male" name="gender" class="form-check-input"/>
+          - unexpected value "checked"
+
+
+      4 |     await page.goto('https://testautomationpractice.blogspot.com/')
+      5 |     await page.locator('#male').check();
+    > 6 |     await expect(page.locator('#male')).not.toBeChecked();
+        |                                             ^
+      7 | })
+      8 |
+      9 | test("multi dropdown", async({page})=>{
+        at C:\Users\2422034\OneDrive - Cognizant\Documents\Playwright Batch Mar18\tests\Report\report_demo.spec.ts:6:45
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\Report-report_demo-radiobutton-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\Report-report_demo-radiobutton-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\Report-report_demo-radiobutton-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Report-report_demo-radiobutton-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\Report-report_demo-radiobutton-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\Report-report_demo-radiobutton-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="multi dropdown" classname="Report\report_demo.spec.ts" time="11.978">
+</testcase>
+</testsuite>
+</testsuites>
